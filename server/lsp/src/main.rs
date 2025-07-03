@@ -2,11 +2,8 @@ use std::{cell::RefCell, collections::HashMap};
 
 use tokio::sync::Mutex;
 use tower_lsp::{lsp_types::Url, Client, LspService, Server};
-
-struct Backend {
-    client: Client,
-    documents: Mutex<RefCell<HashMap<Url, DocumentData>>>,
-}
+mod backend;
+mod wrapper;
 
 #[tokio::main]
 async fn main() {

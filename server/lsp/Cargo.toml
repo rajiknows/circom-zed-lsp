@@ -4,5 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+ropey = "1.6.1"
 tokio = { version = "1.46.0", features = ["full"] }
 tower-lsp = "0.20.0"
+
+program_structure = { path = "../program_structure", package = "program_structure" }
