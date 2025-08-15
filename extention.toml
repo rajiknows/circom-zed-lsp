@@ -1,0 +1,7 @@
+id = "circom_lsp"
+name = "circom-zed"
+version = "0.0.1"
+schema_version = 1
+authors = ["rajeshhjhamain@gmail.com"]
+description = "Circom Language Server extention"
+repository = "https://github.com/rajiknows/circom-zed"

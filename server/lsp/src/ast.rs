@@ -1,16 +1,16 @@
 use ropey::Rope;
 use tower_lsp::lsp_types;
 
-use circom_structure::abstract_syntax_tree::ast;
-use circom_structure::function_data::FunctionData;
-use circom_structure::template_data::TemplateData;
+use program_structure::abstract_syntax_tree::ast;
+use program_structure::function_data::FunctionData;
+use program_structure::template_data::TemplateData;
 
 use num_traits::cast::ToPrimitive;
 
 use std::fmt;
 
 use crate::parse;
-use crate::wrappers::*;
+use crate::wrapper::*;
 
 pub struct TokenInfo {
     name: String,
@@ -311,7 +311,7 @@ fn find_declaration(
             let mut statements_or_expressions = vec![scope.body];
             let result = loop {
                 let Some(statement_or_expression) = statements_or_expressions.pop() else {
-                    break None
+                    break None;
                 };
 
                 let result = match statement_or_expression {

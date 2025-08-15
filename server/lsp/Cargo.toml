@@ -7,5 +7,11 @@ edition = "2021"
 ropey = "1.6.1"
 tokio = { version = "1.46.0", features = ["full"] }
 tower-lsp = "0.20.0"
-
 program_structure = { path = "../program_structure", package = "program_structure" }
+circom_parser = { path = "../parser", package = "parser" }
+circom_type_checker = { path = "../type_analysis", package = "type_analysis" }
+codespan-reporting = "0.9.0"
+itertools = "0.10.5"
+num-traits = "0.2.6"
+tempfile = "3"
+clap = { version = "4.3.0", features = ["derive"] }

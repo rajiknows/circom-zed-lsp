@@ -1,13 +1,18 @@
+use std::fmt;
+
+// circom's program archive doesn't implement debug
 pub struct ProgramArchive {
     pub inner: program_structure::program_archive::ProgramArchive,
 }
+
 impl ProgramArchive {
-    pub fn new(inner: program_structure::program_archive::ProgramArchive) -> Self {
-        Self { inner }
+    pub fn new(inner: program_structure::program_archive::ProgramArchive) -> ProgramArchive {
+        ProgramArchive { inner }
     }
 }
-impl std::fmt::Debug for ProgramArchive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+
+impl fmt::Debug for ProgramArchive {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ProgramArchive").finish()
     }
 }

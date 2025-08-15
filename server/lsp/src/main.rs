@@ -1,8 +1,12 @@
-use std::{cell::RefCell, collections::HashMap};
+use tower_lsp::{LspService, Server};
 
-use tokio::sync::Mutex;
-use tower_lsp::{lsp_types::Url, Client, LspService, Server};
+use crate::backend::Backend;
+mod ast;
 mod backend;
+mod cli;
+mod constansts;
+mod lsp_types_util;
+mod parse;
 mod wrapper;
 
 #[tokio::main]
